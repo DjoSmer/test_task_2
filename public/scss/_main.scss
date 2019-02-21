@@ -1,0 +1,68 @@
+
+.task-new {
+  background-color: #e3f2fd;
+}
+
+.task-new-form {
+  //padding: 1rem 0;
+
+  textarea {
+    resize: none;
+  }
+
+}
+
+.task-list {
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .card-status2 {
+    background: #55cc6f;
+    //border-color: #1e7e34;
+    color: #fff;
+  }
+
+}
+
+.task-list-sort {
+  text-align: right;
+
+  select {
+    display: inline-block;
+    width: 150px;
+  }
+}
+
+.task-list-page {
+  //display: none;
+}
+
+.ajax-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(128, 128, 128, 0.6);
+  z-index: 2;
+
+  .ajax-running {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
