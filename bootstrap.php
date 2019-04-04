@@ -27,8 +27,8 @@ appRequire('app/Models/Statuses.php');
 appRequire('app/View.php');
 
 DB::instance([
-    'database_name' => 'db_task',
+    'database_name' => 'db_tasks',
     'server' => 'localhost',
-    'username' => 'taskuser',
-    'password' => 'taskpassword',
+    'username' => 'root',
+    'password' => 'root',
 ]);

@@ -163,6 +163,6 @@ let app,
 $( function () {
     app = new appRun();
 
-    //убираем рекламу хостинга
+    //убираем рекламу хостинг
     $('.cbalink').remove()
 } );

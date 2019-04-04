@@ -13,17 +13,16 @@ class App extends Controller {
      */
     public function actionIndex() {
 
-        $model_statuses = new Statuses();
+/*        $model_statuses = new Statuses();
         $statuses = $model_statuses->findAll('task', 'type');
 
         $view_task = new View('task', [
             'admin' => Auth::is_admin(),
             'statuses' => $statuses,
-        ]);
+        ]);*/
 
-        $view = new View('app', [
+        $view = new View('vue', [
             'admin' => Auth::is_admin(),
-            'content' => $view_task->render(),
         ]);
 
         return $view->render();

@@ -25,18 +25,7 @@
             <div class="dropdown dropleft">
                 <a class="nav-item nav-link mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Админ</a>
                 <div class="auth-form-dropdown-menu dropdown-menu">
-                    <form id="authForm" class="px-4 py-3" method="post" action="login" autocomplete="off">
-                        <div class="form-group">
-                            <h5 class="card-title">Вход для персонала</h5>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="login" id="authFormLogin" placeholder="логин">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" id="authFormPassword" placeholder="Пароль">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Войти</button>
-                    </form>
+
                 </div>
             </div>
 <?php endif; ?>

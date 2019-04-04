@@ -144,6 +144,53 @@ class Task extends Controller {
     }
 
     /**
+     * Retrun Task list
+     * @param $requestData
+     * @return array
+     */
+    public function actionListJson($requestData) {
+
+        //$data = $this->validator($requestData);
+        $data = [];
+        $column = isset($data['column']) ? $data['column'] : 'create';
+        $direction = isset($data['direction']) ? $data['direction'] : 'desc';
+
+        $limit = 3;
+        $page = isset($data['page']) ? $data['page'] : 1;
+
+        $offset = 0;
+        if ($page > 1) $offset = $limit * ($page - 1);
+
+        $model_tasks = Tasks::instance();
+
+        $query = QueryBuilder::instance($model_tasks)
+            ->limit($offset, $limit);
+
+        if ($column == 'name' || $column == 'email') {
+            $query->orderBy($column, $direction, Users::instance());
+        }
+        else if ($column == 'status') {
+            $query->orderBy('id', $direction, Statuses::instance());
+        }
+        else {
+            $query->orderBy('create_at', $direction);
+        }
+
+        $tasks = $model_tasks->getList($query);
+        $tasks['admin'] = Auth::is_admin();
+
+        //$view_task_list = new View('task_list_view', $tasks);
+        //$task_list_view = $view_task_list->render();
+
+        return [
+            'page' => $page,
+            'pageSize' => $limit,
+            'totalCount' => $tasks['size'],
+            'tasks' => $tasks['tasks']
+        ];
+    }
+
+    /**
      * Update task
      * @param $data
      * @return array
